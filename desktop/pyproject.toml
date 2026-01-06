@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wristcontrol"
+version = "0.1.0"
+description = "Voice and gesture computer control system using Samsung Galaxy Watch"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "WristControl Team"}
+]
+keywords = ["gesture", "voice", "smartwatch", "accessibility", "input"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Desktop Environment",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+]
+
+dependencies = [
+    "bleak>=0.21.0",           # Bluetooth Low Energy
+    "pynput>=1.7.6",           # OS input injection (mouse/keyboard)
+    "numpy>=1.24.0",           # Numerical computations for algorithms
+    "scipy>=1.11.0",           # Signal processing and filtering
+    "openai-whisper>=20231117", # Local speech-to-text (optional)
+    "sounddevice>=0.4.6",      # Audio capture
+    "pystray>=0.19.0",         # System tray icon
+    "pillow>=10.0.0",          # Image support for tray icon
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+    "black>=23.9.0",
+]
+cloud = [
+    "openai>=1.0.0",           # OpenAI Whisper API
+    "google-cloud-speech>=2.21.0",  # Google Cloud STT
+]
+
+[project.scripts]
+wristcontrol = "wristcontrol.main:main"
+
+[project.urls]
+Homepage = "https://github.com/wristcontrol/wristcontrol"
+Documentation = "https://github.com/wristcontrol/wristcontrol#readme"
+Issues = "https://github.com/wristcontrol/wristcontrol/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

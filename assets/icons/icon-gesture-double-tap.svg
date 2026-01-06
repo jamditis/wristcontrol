@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="doubleTapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hand pointing down -->
+  <g transform="translate(24, 22)">
+    <rect x="-3" y="-16" width="6" height="18" rx="3" fill="url(#doubleTapGradient)"/>
+    <ellipse cx="0" cy="7" rx="11" ry="9" fill="url(#doubleTapGradient)" opacity="0.8"/>
+    <rect x="-13" y="0" width="9" height="5" rx="2.5" fill="url(#doubleTapGradient)" opacity="0.8"/>
+  </g>
+
+  <!-- Double tap indicator (two circles) -->
+  <circle cx="18" cy="42" r="2.5" fill="#22d3ee"/>
+  <circle cx="30" cy="42" r="2.5" fill="#22d3ee"/>
+  <circle cx="18" cy="42" r="5" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.5"/>
+  <circle cx="30" cy="42" r="5" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.5"/>
+</svg>

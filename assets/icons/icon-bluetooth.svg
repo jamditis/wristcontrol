@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="btGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bluetooth symbol -->
+  <path d="M 24 6 L 24 42 M 24 6 L 34 16 L 14 32 M 24 42 L 34 32 L 14 16"
+        stroke="url(#btGradient)"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Connection indicator dots -->
+  <circle cx="8" cy="24" r="2" fill="#22d3ee"/>
+  <circle cx="40" cy="24" r="2" fill="#22d3ee"/>
+</svg>

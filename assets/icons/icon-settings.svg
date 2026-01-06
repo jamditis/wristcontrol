@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="settingsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Gear teeth -->
+  <path d="M 24 4 L 27 4 L 28 8 L 32 10 L 36 8 L 38 10 L 36 14 L 38 18 L 42 18 L 44 21 L 44 27 L 40 28 L 38 32 L 40 36 L 38 38 L 34 36 L 30 38 L 28 42 L 24 44 L 20 44 L 18 40 L 14 38 L 10 40 L 8 38 L 10 34 L 8 30 L 4 28 L 4 24 L 4 20 L 8 18 L 10 14 L 8 10 L 10 8 L 14 10 L 18 8 L 20 4 Z"
+        fill="url(#settingsGradient)"/>
+
+  <!-- Center circle -->
+  <circle cx="24" cy="24" r="8" fill="#111827"/>
+  <circle cx="24" cy="24" r="4" fill="url(#settingsGradient)" opacity="0.5"/>
+</svg>

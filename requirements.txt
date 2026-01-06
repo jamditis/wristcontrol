@@ -1,0 +1,50 @@
+# WristControl Desktop Application Dependencies
+# Python 3.9+ required
+
+# Core input injection
+pynput>=1.7.6
+
+# System tray
+pystray>=0.19.5
+pillow>=10.0.0
+
+# Desktop UI (settings window)
+PySide6>=6.5.0
+
+# BLE communication (for watch connection)
+bleak>=0.21.0
+
+# Sensor processing and filtering
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Configuration
+# (using built-in json and dataclasses)
+
+# Development and testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Performance profiling (optional)
+line-profiler>=4.0.0
+
+# Platform-specific dependencies (optional, install as needed):
+# macOS:
+#   pyobjc-framework-Quartz>=9.0
+# Linux:
+#   python-xlib>=0.33
+#   evdev>=1.6.0  # For Wayland support
+# Windows:
+#   pywin32>=306  # For advanced optimizations
+
+# Voice processing (Phase 2, optional)
+# openai-whisper>=20231117  # Local STT
+# sounddevice>=0.4.6        # Audio capture
+
+# Web UI alternative (optional, not recommended for MVP)
+# flask>=2.3.0
+# flask-socketio>=5.3.0
+# pywebview>=4.3.0
+
+# Packaging
+pyinstaller>=6.0.0

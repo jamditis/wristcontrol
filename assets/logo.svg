@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Watch band top -->
+  <rect x="75" y="20" width="50" height="25" rx="5" fill="#374151"/>
+
+  <!-- Watch face circle -->
+  <circle cx="100" cy="100" r="55" fill="#1f2937" stroke="url(#primaryGradient)" stroke-width="4"/>
+
+  <!-- Watch band bottom -->
+  <rect x="75" y="155" width="50" height="25" rx="5" fill="#374151"/>
+
+  <!-- Inner watch face -->
+  <circle cx="100" cy="100" r="45" fill="#111827"/>
+
+  <!-- Gesture hand icon in center -->
+  <g transform="translate(100, 100)" filter="url(#glow)">
+    <!-- Palm -->
+    <ellipse cx="0" cy="8" rx="18" ry="20" fill="url(#primaryGradient)" opacity="0.9"/>
+
+    <!-- Fingers -->
+    <rect x="-15" y="-25" width="6" height="22" rx="3" fill="url(#primaryGradient)"/>
+    <rect x="-6" y="-30" width="6" height="27" rx="3" fill="url(#primaryGradient)"/>
+    <rect x="3" y="-28" width="6" height="25" rx="3" fill="url(#primaryGradient)"/>
+    <rect x="11" y="-22" width="6" height="19" rx="3" fill="url(#primaryGradient)"/>
+
+    <!-- Thumb -->
+    <rect x="-24" y="-8" width="14" height="6" rx="3" fill="url(#primaryGradient)" transform="rotate(-30 -24 -8)"/>
+  </g>
+
+  <!-- Motion waves -->
+  <g stroke="url(#accentGradient)" stroke-width="2" fill="none" opacity="0.8">
+    <path d="M 145 70 Q 160 85 145 100" stroke-linecap="round"/>
+    <path d="M 155 60 Q 175 85 155 110" stroke-linecap="round"/>
+    <path d="M 165 50 Q 190 85 165 120" stroke-linecap="round"/>
+  </g>
+
+  <!-- Voice indicator dots -->
+  <g fill="url(#accentGradient)">
+    <circle cx="35" cy="90" r="3"/>
+    <circle cx="35" cy="100" r="4"/>
+    <circle cx="35" cy="110" r="3"/>
+  </g>
+</svg>

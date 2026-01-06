@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WristControl Documentation - Learn how to set up and use voice and gesture control for your computer with Samsung Galaxy Watch.">
+  <title>Documentation - WristControl</title>
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#6366f1"/>
+              <stop offset="100%" style="stop-color:#8b5cf6"/>
+            </linearGradient>
+          </defs>
+          <circle cx="20" cy="20" r="18" fill="#1f2937" stroke="url(#logoGrad)" stroke-width="2"/>
+          <circle cx="20" cy="20" r="14" fill="#111827"/>
+          <g transform="translate(20, 20) scale(0.35)">
+            <ellipse cx="0" cy="8" rx="18" ry="20" fill="url(#logoGrad)"/>
+            <rect x="-6" y="-30" width="6" height="27" rx="3" fill="url(#logoGrad)"/>
+          </g>
+        </svg>
+        <span class="nav-logo-text">WristControl</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#features" class="nav-link">Features</a></li>
+        <li><a href="index.html#gestures" class="nav-link">Gestures</a></li>
+        <li><a href="index.html#platforms" class="nav-link">Platforms</a></li>
+        <li><a href="docs.html" class="nav-link" aria-current="page">Docs</a></li>
+        <li><a href="index.html#download" class="nav-cta">Download</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <nav class="docs-nav">
+        <div class="docs-nav-section">
+          <h3>Getting Started</h3>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#setup">Quick Setup</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-section">
+          <h3>Usage Guide</h3>
+          <ul>
+            <li><a href="#connecting">Connecting Your Watch</a></li>
+            <li><a href="#gestures-guide">Gesture Controls</a></li>
+            <li><a href="#voice-commands">Voice Commands</a></li>
+            <li><a href="#cursor-control">Cursor Control</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-section">
+          <h3>Configuration</h3>
+          <ul>
+            <li><a href="#settings">Settings Overview</a></li>
+            <li><a href="#sensitivity">Sensitivity Tuning</a></li>
+            <li><a href="#custom-commands">Custom Commands</a></li>
+            <li><a href="#profiles">Application Profiles</a></li>
+          </ul>
+        </div>
+
+        <div class="docs-nav-section">
+          <h3>Reference</h3>
+          <ul>
+            <li><a href="#api">API Reference</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <div class="docs-content">
+      <article>
+        <section id="overview" class="docs-section">
+          <h1>WristControl Documentation</h1>
+          <p class="docs-lead">
+            WristControl transforms your Samsung Galaxy Watch into a powerful input device,
+            enabling hands-free computer control through natural gestures and voice commands.
+          </p>
+
+          <div class="docs-card docs-card-highlight">
+            <div class="docs-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Quick Start</h4>
+              <p>Get up and running in under 5 minutes. Install the desktop app, connect your watch, and start controlling.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="requirements" class="docs-section">
+          <h2>System Requirements</h2>
+
+          <h3>Desktop Computer</h3>
+          <ul class="docs-list">
+            <li><strong>Windows 10/11</strong> (64-bit) with Bluetooth LE support</li>
+            <li><strong>macOS 11+</strong> (Big Sur or later)</li>
+            <li><strong>Linux</strong> with BlueZ 5.50+ and PulseAudio/PipeWire</li>
+            <li>Python 3.10 or later (for source installation)</li>
+            <li>Bluetooth 4.0+ adapter with BLE support</li>
+          </ul>
+
+          <h3>Smartwatch</h3>
+          <ul class="docs-list">
+            <li>Samsung Galaxy Watch 4 or newer (Wear OS)</li>
+            <li>Older Galaxy Watch models (Tizen) - limited support</li>
+            <li>Wear OS 3.0 or later recommended</li>
+          </ul>
+
+          <div class="docs-note">
+            <strong>Note:</strong> Other Wear OS watches may work but are not officially tested.
+          </div>
+        </section>
+
+        <section id="installation" class="docs-section">
+          <h2>Installation</h2>
+
+          <h3>Option 1: Pre-built Binaries (Recommended)</h3>
+          <p>Download the latest release for your platform:</p>
+
+          <div class="docs-download-grid">
+            <a href="#" class="docs-download-card">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M 6 12 L 22 10 L 22 23 L 6 23 Z" fill="#6366f1"/>
+                <path d="M 24 9.5 L 42 7 L 42 23 L 24 23 Z" fill="#6366f1"/>
+                <path d="M 6 25 L 22 25 L 22 38 L 6 36 Z" fill="#8b5cf6"/>
+                <path d="M 24 25 L 42 25 L 42 41 L 24 38.5 Z" fill="#8b5cf6"/>
+              </svg>
+              <span>Windows</span>
+              <small>wristcontrol-win64.exe</small>
+            </a>
+
+            <a href="#" class="docs-download-card">
+              <svg viewBox="0 0 48 48" fill="none">
+                <defs><linearGradient id="dl2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                <path d="M 34 14 C 34 10 31 7 28 7 C 26 7 25 8 24 8 C 23 8 22 7 20 7 C 16 7 12 11 12 17 C 12 24 16 33 20 38 C 22 41 23 42 24 42 C 25 42 26 41 28 38 C 32 33 36 24 36 17 C 36 15 35 14 34 14 Z" fill="url(#dl2)"/>
+                <path d="M 24 7 Q 28 4 30 6" stroke="url(#dl2)" stroke-width="2" fill="none"/>
+              </svg>
+              <span>macOS</span>
+              <small>WristControl.dmg</small>
+            </a>
+
+            <a href="#" class="docs-download-card">
+              <svg viewBox="0 0 48 48" fill="none">
+                <defs><linearGradient id="dl3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                <ellipse cx="24" cy="30" rx="12" ry="14" fill="url(#dl3)"/>
+                <ellipse cx="24" cy="32" rx="8" ry="10" fill="#f3f4f6"/>
+                <circle cx="24" cy="14" r="10" fill="url(#dl3)"/>
+                <ellipse cx="24" cy="17" rx="3" ry="2" fill="#fbbf24"/>
+              </svg>
+              <span>Linux</span>
+              <small>wristcontrol.AppImage</small>
+            </a>
+          </div>
+
+          <h3>Option 2: Install from Source</h3>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header">
+              <span>Terminal</span>
+              <button class="docs-copy-btn" data-copy="source-install">Copy</button>
+            </div>
+            <pre><code id="source-install"># Clone the repository
+git clone https://github.com/wristcontrol/wristcontrol.git
+cd wristcontrol/desktop
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -e ".[dev]"
+
+# Run the application
+wristcontrol</code></pre>
+          </div>
+
+          <h3>Option 3: pip Install</h3>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header">
+              <span>Terminal</span>
+              <button class="docs-copy-btn" data-copy="pip-install">Copy</button>
+            </div>
+            <pre><code id="pip-install">pip install wristcontrol
+wristcontrol</code></pre>
+          </div>
+        </section>
+
+        <section id="setup" class="docs-section">
+          <h2>Quick Setup</h2>
+
+          <div class="docs-steps">
+            <div class="docs-step">
+              <div class="docs-step-number">1</div>
+              <div class="docs-step-content">
+                <h4>Install Desktop App</h4>
+                <p>Download and install WristControl on your computer using one of the methods above.</p>
+              </div>
+            </div>
+
+            <div class="docs-step">
+              <div class="docs-step-number">2</div>
+              <div class="docs-step-content">
+                <h4>Enable Bluetooth</h4>
+                <p>Ensure Bluetooth is enabled on both your computer and watch. The watch should be discoverable.</p>
+              </div>
+            </div>
+
+            <div class="docs-step">
+              <div class="docs-step-number">3</div>
+              <div class="docs-step-content">
+                <h4>Install Watch App</h4>
+                <p>Install the WristControl companion app on your Galaxy Watch from the Play Store.</p>
+              </div>
+            </div>
+
+            <div class="docs-step">
+              <div class="docs-step-number">4</div>
+              <div class="docs-step-content">
+                <h4>Connect & Configure</h4>
+                <p>Launch both apps and follow the pairing wizard. Adjust sensitivity to your preference.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="connecting" class="docs-section">
+          <h2>Connecting Your Watch</h2>
+
+          <p>WristControl uses Bluetooth Low Energy (BLE) for efficient, low-latency communication with your watch.</p>
+
+          <h3>Pairing Process</h3>
+          <ol class="docs-list docs-list-numbered">
+            <li>Open WristControl on your computer - it will start scanning for devices</li>
+            <li>Open the WristControl app on your Galaxy Watch</li>
+            <li>Select your watch from the list of discovered devices</li>
+            <li>Accept the pairing request on your watch</li>
+            <li>Wait for the connection to establish (status indicator turns green)</li>
+          </ol>
+
+          <div class="docs-note docs-note-warning">
+            <strong>Important:</strong> Keep your watch within 10 meters of your computer for reliable connection.
+            Walls and other obstacles may reduce range.
+          </div>
+        </section>
+
+        <section id="gestures-guide" class="docs-section">
+          <h2>Gesture Controls</h2>
+
+          <p>WristControl recognizes several gestures performed with your watch hand:</p>
+
+          <div class="docs-gesture-grid">
+            <div class="docs-gesture-item">
+              <div class="docs-gesture-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                  <g transform="translate(24, 24)"><rect x="-3" y="-18" width="6" height="20" rx="3" fill="url(#g1)"/><ellipse cx="0" cy="8" rx="12" ry="10" fill="url(#g1)" opacity="0.8"/></g>
+                  <circle cx="24" cy="42" r="3" fill="#22d3ee"/>
+                </svg>
+              </div>
+              <div class="docs-gesture-info">
+                <h4>Tap</h4>
+                <p>Quickly pinch your index finger and thumb together.</p>
+                <span class="docs-gesture-action">Left Click</span>
+              </div>
+            </div>
+
+            <div class="docs-gesture-item">
+              <div class="docs-gesture-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                  <g transform="translate(24, 22)"><rect x="-3" y="-16" width="6" height="18" rx="3" fill="url(#g2)"/><ellipse cx="0" cy="7" rx="11" ry="9" fill="url(#g2)" opacity="0.8"/></g>
+                  <circle cx="18" cy="42" r="2.5" fill="#22d3ee"/><circle cx="30" cy="42" r="2.5" fill="#22d3ee"/>
+                </svg>
+              </div>
+              <div class="docs-gesture-info">
+                <h4>Double Tap</h4>
+                <p>Two quick pinches in succession.</p>
+                <span class="docs-gesture-action">Double Click</span>
+              </div>
+            </div>
+
+            <div class="docs-gesture-item">
+              <div class="docs-gesture-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                  <g transform="translate(24, 24)"><ellipse cx="0" cy="0" rx="14" ry="12" fill="url(#g3)"/><ellipse cx="-12" cy="2" rx="5" ry="4" fill="url(#g3)"/></g>
+                  <circle cx="24" cy="24" r="20" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="31.4 94.2" transform="rotate(-90 24 24)"/>
+                </svg>
+              </div>
+              <div class="docs-gesture-info">
+                <h4>Hold</h4>
+                <p>Pinch and hold for 500ms or more.</p>
+                <span class="docs-gesture-action">Right Click</span>
+              </div>
+            </div>
+
+            <div class="docs-gesture-item">
+              <div class="docs-gesture-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                  <g transform="translate(20, 24)"><rect x="-3" y="-14" width="6" height="16" rx="3" fill="url(#g4)"/><ellipse cx="0" cy="7" rx="10" ry="9" fill="url(#g4)" opacity="0.8"/></g>
+                  <g stroke="#22d3ee" stroke-width="2"><path d="M 32 18 L 40 18"/><path d="M 36 14 L 40 18 L 36 22"/></g>
+                </svg>
+              </div>
+              <div class="docs-gesture-info">
+                <h4>Wrist Flick</h4>
+                <p>Quick rotation of your wrist left or right.</p>
+                <span class="docs-gesture-action">Scroll Up/Down</span>
+              </div>
+            </div>
+
+            <div class="docs-gesture-item">
+              <div class="docs-gesture-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <defs><linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient></defs>
+                  <g transform="translate(24, 24)"><ellipse cx="0" cy="6" rx="16" ry="14" fill="url(#g5)"/></g>
+                  <path d="M 24 6 L 24 2" stroke="#22d3ee" stroke-width="2"/>
+                  <circle cx="24" cy="24" r="18" fill="none" stroke="url(#g5)" stroke-width="2" stroke-dasharray="4 4"/>
+                </svg>
+              </div>
+              <div class="docs-gesture-info">
+                <h4>Palm Up</h4>
+                <p>Turn your palm to face upward.</p>
+                <span class="docs-gesture-action">Pause/Disable Control</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="voice-commands" class="docs-section">
+          <h2>Voice Commands</h2>
+
+          <p>WristControl supports over 30 built-in voice commands for hands-free operation.</p>
+
+          <h3>Mouse Commands</h3>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>click</code></td><td>Left mouse click</td></tr>
+                <tr><td><code>double click</code></td><td>Double left click</td></tr>
+                <tr><td><code>right click</code></td><td>Right mouse click</td></tr>
+                <tr><td><code>scroll up</code></td><td>Scroll up</td></tr>
+                <tr><td><code>scroll down</code></td><td>Scroll down</td></tr>
+                <tr><td><code>drag</code></td><td>Start drag operation</td></tr>
+                <tr><td><code>drop</code></td><td>Release drag</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Keyboard Commands</h3>
+          <div class="docs-table-wrapper">
+            <table class="docs-table">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>copy</code></td><td>Ctrl+C / Cmd+C</td></tr>
+                <tr><td><code>paste</code></td><td>Ctrl+V / Cmd+V</td></tr>
+                <tr><td><code>cut</code></td><td>Ctrl+X / Cmd+X</td></tr>
+                <tr><td><code>undo</code></td><td>Ctrl+Z / Cmd+Z</td></tr>
+                <tr><td><code>select all</code></td><td>Ctrl+A / Cmd+A</td></tr>
+                <tr><td><code>escape</code></td><td>Escape key</td></tr>
+                <tr><td><code>enter</code></td><td>Enter key</td></tr>
+                <tr><td><code>tab</code></td><td>Tab key</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Text Dictation</h3>
+          <p>Say <code>"type [your text]"</code> to insert text at the cursor position.</p>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Examples</span></div>
+            <pre><code>"type Hello World"  → Types: Hello World
+"type Meeting at 3pm" → Types: Meeting at 3pm</code></pre>
+          </div>
+        </section>
+
+        <section id="cursor-control" class="docs-section">
+          <h2>Cursor Control</h2>
+
+          <p>WristControl offers two cursor control modes:</p>
+
+          <h3>Relative Mode (Default)</h3>
+          <p>
+            Tilting your hand moves the cursor in that direction. The speed of movement
+            depends on the degree of tilt. Return your hand to neutral to stop cursor movement.
+          </p>
+
+          <h3>Absolute Mode</h3>
+          <p>
+            Your hand position maps directly to screen position. Point at where you want
+            the cursor to go. Best for users comfortable with pointer-based control.
+          </p>
+
+          <div class="docs-note">
+            <strong>Tip:</strong> Start with Relative mode and low sensitivity, then increase as you become comfortable.
+          </div>
+        </section>
+
+        <section id="settings" class="docs-section">
+          <h2>Settings Overview</h2>
+
+          <p>Configuration is stored in <code>~/.config/wristcontrol/config.json</code> and can be edited through the app or directly.</p>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header">
+              <span>config.json</span>
+            </div>
+            <pre><code>{
+  "cursor": {
+    "sensitivity": 1.0,
+    "dead_zone": 0.1,
+    "acceleration": 1.5,
+    "smoothing": 0.3,
+    "mode": "relative"
+  },
+  "gestures": {
+    "tap_threshold": 0.5,
+    "double_tap_window": 0.3,
+    "hold_duration": 0.5,
+    "enabled_gestures": ["tap", "double_tap", "hold", "wrist_flick"]
+  },
+  "voice": {
+    "enabled": true,
+    "backend": "whisper_local",
+    "activation_mode": "push_to_talk",
+    "wake_word": "computer"
+  },
+  "bluetooth": {
+    "device_name": "Galaxy Watch",
+    "auto_reconnect": true
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="sensitivity" class="docs-section">
+          <h2>Sensitivity Tuning</h2>
+
+          <h3>Cursor Sensitivity</h3>
+          <ul class="docs-list">
+            <li><strong>sensitivity</strong> (0.1 - 3.0): Overall cursor speed multiplier</li>
+            <li><strong>dead_zone</strong> (0.0 - 0.5): Movement threshold to filter noise</li>
+            <li><strong>acceleration</strong> (1.0 - 3.0): Speed increase for larger movements</li>
+            <li><strong>smoothing</strong> (0.0 - 0.9): Movement averaging for stability</li>
+          </ul>
+
+          <h3>Gesture Sensitivity</h3>
+          <ul class="docs-list">
+            <li><strong>tap_threshold</strong>: Force required to register a tap</li>
+            <li><strong>double_tap_window</strong>: Max time between taps (seconds)</li>
+            <li><strong>hold_duration</strong>: Time to register a hold gesture</li>
+          </ul>
+        </section>
+
+        <section id="custom-commands" class="docs-section">
+          <h2>Custom Commands</h2>
+
+          <p>You can define custom voice commands that execute specific actions or keyboard shortcuts.</p>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Python API</span></div>
+            <pre><code>from wristcontrol.voice import VoiceProcessor
+
+voice = VoiceProcessor(config)
+
+# Add custom command
+voice.register_command(
+    "launch browser",
+    lambda: os.system("open -a Safari")  # macOS example
+)
+
+# Add command with parameters
+voice.register_command(
+    "search for *",
+    lambda query: webbrowser.open(f"https://google.com/search?q={query}")
+)</code></pre>
+          </div>
+        </section>
+
+        <section id="profiles" class="docs-section">
+          <h2>Application Profiles</h2>
+
+          <p>Create different configurations for different applications. Profiles automatically switch based on the active window.</p>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Example: Presentation Mode</span></div>
+            <pre><code>{
+  "profiles": {
+    "PowerPoint": {
+      "cursor": {
+        "sensitivity": 0.5
+      },
+      "gestures": {
+        "wrist_flick_left": "previous_slide",
+        "wrist_flick_right": "next_slide"
+      }
+    }
+  }
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="api" class="docs-section">
+          <h2>API Reference</h2>
+
+          <p>WristControl exposes a Python API for integration and extension.</p>
+
+          <h3>Core Classes</h3>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>WristControlApp</span></div>
+            <pre><code>from wristcontrol.core import WristControlApp
+
+app = WristControlApp()
+await app.start()
+
+# Access components
+app.bluetooth_manager  # BluetoothManager instance
+app.gesture_processor  # GestureProcessor instance
+app.voice_processor    # VoiceProcessor instance
+app.cursor_controller  # CursorController instance
+
+await app.stop()</code></pre>
+          </div>
+
+          <h3>Event Callbacks</h3>
+
+          <div class="docs-code-block">
+            <div class="docs-code-header"><span>Event Handling</span></div>
+            <pre><code># Register gesture callback
+def on_gesture(event):
+    print(f"Gesture: {event.gesture_type}, confidence: {event.confidence}")
+
+gesture_processor.on_gesture = on_gesture
+
+# Register sensor data callback
+def on_sensors(data):
+    print(f"Acceleration: {data.acceleration}")
+    print(f"Gyroscope: {data.gyroscope}")
+
+bluetooth_manager.on_sensor_data = on_sensors</code></pre>
+          </div>
+        </section>
+
+        <section id="troubleshooting" class="docs-section">
+          <h2>Troubleshooting</h2>
+
+          <h3>Connection Issues</h3>
+          <div class="docs-accordion">
+            <details>
+              <summary>Watch not appearing in device list</summary>
+              <div class="docs-accordion-content">
+                <ul>
+                  <li>Ensure Bluetooth is enabled on both devices</li>
+                  <li>Make sure the watch is not connected to another device</li>
+                  <li>Restart Bluetooth on your computer</li>
+                  <li>On Linux, ensure BlueZ is properly configured</li>
+                </ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>Frequent disconnections</summary>
+              <div class="docs-accordion-content">
+                <ul>
+                  <li>Move closer to your computer (within 3 meters)</li>
+                  <li>Remove interference from other Bluetooth devices</li>
+                  <li>Check watch battery level (low battery affects BLE)</li>
+                  <li>Update Bluetooth drivers on your computer</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <h3>Gesture Recognition</h3>
+          <div class="docs-accordion">
+            <details>
+              <summary>Gestures not being detected</summary>
+              <div class="docs-accordion-content">
+                <ul>
+                  <li>Ensure the watch is worn snugly on your wrist</li>
+                  <li>Check that gesture recognition is enabled in settings</li>
+                  <li>Try recalibrating the gesture sensor</li>
+                  <li>Increase tap_threshold if getting false positives</li>
+                </ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>Too many accidental clicks</summary>
+              <div class="docs-accordion-content">
+                <ul>
+                  <li>Increase the dead_zone value in cursor settings</li>
+                  <li>Increase tap_threshold in gesture settings</li>
+                  <li>Enable palm-up detection to pause control when needed</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="faq" class="docs-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="docs-accordion">
+            <details>
+              <summary>Does WristControl work with Apple Watch?</summary>
+              <div class="docs-accordion-content">
+                <p>Currently, WristControl only supports Samsung Galaxy Watch and other Wear OS devices. Apple Watch support is planned for a future release.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>What is the battery impact on my watch?</summary>
+              <div class="docs-accordion-content">
+                <p>WristControl is designed for efficiency. Typical usage consumes about 15-20% battery per hour of active use. Battery life is estimated at 4+ hours of continuous use.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Can I use WristControl for gaming?</summary>
+              <div class="docs-accordion-content">
+                <p>WristControl works best for productivity tasks. While basic gaming is possible, the latency (~50ms) may not be suitable for fast-paced or competitive games.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Is voice data sent to the cloud?</summary>
+              <div class="docs-accordion-content">
+                <p>By default, WristControl uses local Whisper processing - all voice recognition happens on your computer. Cloud options are available but opt-in only.</p>
+              </div>
+            </details>
+
+            <details>
+              <summary>Can I use WristControl while walking?</summary>
+              <div class="docs-accordion-content">
+                <p>Yes! WristControl maintains 90%+ accuracy while walking. Motion compensation algorithms filter out walking movements from intentional gestures.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p class="footer-copyright">&copy; 2026 WristControl. Released under the MIT License.</p>
+        <div class="footer-social">
+          <a href="https://github.com/wristcontrol/wristcontrol" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

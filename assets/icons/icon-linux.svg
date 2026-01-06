@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="linuxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Penguin body -->
+  <ellipse cx="24" cy="30" rx="12" ry="14" fill="url(#linuxGradient)"/>
+
+  <!-- White belly -->
+  <ellipse cx="24" cy="32" rx="8" ry="10" fill="#f3f4f6"/>
+
+  <!-- Head -->
+  <circle cx="24" cy="14" r="10" fill="url(#linuxGradient)"/>
+
+  <!-- Eyes -->
+  <circle cx="20" cy="12" r="3" fill="#ffffff"/>
+  <circle cx="28" cy="12" r="3" fill="#ffffff"/>
+  <circle cx="20" cy="12" r="1.5" fill="#1f2937"/>
+  <circle cx="28" cy="12" r="1.5" fill="#1f2937"/>
+
+  <!-- Beak -->
+  <ellipse cx="24" cy="17" rx="3" ry="2" fill="#fbbf24"/>
+
+  <!-- Feet -->
+  <ellipse cx="18" cy="44" rx="4" ry="2" fill="#fbbf24"/>
+  <ellipse cx="30" cy="44" rx="4" ry="2" fill="#fbbf24"/>
+</svg>

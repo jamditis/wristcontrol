@@ -155,3 +155,7 @@ watch/app/build/
 watch/.gradle/
 watch/local.properties
 watch/*.iml
+
+# Windows artifacts
+desktop.ini
+nul

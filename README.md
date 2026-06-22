@@ -19,6 +19,8 @@
 
 ---
 
+> Status: pre-alpha. The desktop app skeleton and web assets exist; Bluetooth, gesture recognition, voice, and cursor control are not yet implemented (see the roadmap below). There are no releases or PyPI package yet — install from source.
+
 ## Overview
 
 WristControl transforms your Samsung Galaxy Watch into a powerful input device, enabling hands-free computer control through natural gestures and voice commands. Move your cursor, click, scroll, and type without touching your keyboard or mouse.
@@ -62,21 +64,13 @@ WristControl transforms your Samsung Galaxy Watch into a powerful input device, 
 
 ## Installation
 
-### Pre-built Binaries
+Pre-built binaries and a PyPI package are not published yet — install from source.
 
-Download the latest release for your platform from the [Releases](https://github.com/wristcontrol/wristcontrol/releases) page.
-
-### From PyPI
-
-```bash
-pip install wristcontrol
-```
-
-### From Source
+### From source
 
 ```bash
 # Clone the repository
-git clone https://github.com/wristcontrol/wristcontrol.git
+git clone https://github.com/jamditis/wristcontrol.git
 cd wristcontrol/desktop
 
 # Create virtual environment

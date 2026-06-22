@@ -55,9 +55,9 @@ cloud = [
 wristcontrol = "wristcontrol.main:main"
 
 [project.urls]
-Homepage = "https://github.com/wristcontrol/wristcontrol"
-Documentation = "https://github.com/wristcontrol/wristcontrol#readme"
-Issues = "https://github.com/wristcontrol/wristcontrol/issues"
+Homepage = "https://github.com/jamditis/wristcontrol"
+Documentation = "https://github.com/jamditis/wristcontrol#readme"
+Issues = "https://github.com/jamditis/wristcontrol/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

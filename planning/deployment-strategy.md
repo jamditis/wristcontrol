@@ -101,9 +101,9 @@ portable-windows:
 {
     "version": "1.0.0",
     "description": "Voice and gesture computer control",
-    "homepage": "https://github.com/wristcontrol/wristcontrol",
+    "homepage": "https://github.com/jamditis/wristcontrol",
     "license": "MIT",
-    "url": "https://github.com/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0-win64-portable.zip",
+    "url": "https://github.com/jamditis/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0-win64-portable.zip",
     "hash": "sha256:...",
     "bin": "WristControl.exe",
     "shortcuts": [
@@ -130,8 +130,8 @@ build-macos:
 # Formula/wristcontrol.rb
 class Wristcontrol < Formula
   desc "Voice and gesture computer control using smartwatch"
-  homepage "https://github.com/wristcontrol/wristcontrol"
-  url "https://github.com/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0-macos-universal.tar.gz"
+  homepage "https://github.com/jamditis/wristcontrol"
+  url "https://github.com/jamditis/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0-macos-universal.tar.gz"
   sha256 "..."
   version "1.0.0"
 
@@ -625,7 +625,7 @@ import subprocess
 import tempfile
 import requests
 
-UPDATE_URL = "https://api.github.com/repos/wristcontrol/wristcontrol/releases/latest"
+UPDATE_URL = "https://api.github.com/repos/jamditis/wristcontrol/releases/latest"
 
 class WindowsUpdater:
     def check_for_updates(self) -> dict:
@@ -1190,7 +1190,7 @@ winget install WristControl --version 1.0.0
 mv /Applications/WristControl.app ~/.Trash/
 
 # Download and install previous version
-curl -LO https://github.com/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0.dmg
+curl -LO https://github.com/jamditis/wristcontrol/releases/download/v1.0.0/WristControl-1.0.0.dmg
 hdiutil attach WristControl-1.0.0.dmg
 cp -R /Volumes/WristControl/WristControl.app /Applications/
 ```
@@ -1340,7 +1340,7 @@ rollout_stages:
 See [Installation Guide](https://docs.wristcontrol.app/install)
 
 ## Feedback
-Report issues at https://github.com/wristcontrol/issues
+Report issues at https://github.com/jamditis/wristcontrol/issues
 ```
 
 ---
